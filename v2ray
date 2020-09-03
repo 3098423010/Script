@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  v2ray:
+    image: leedog/sci-v2:go-free
+    restart: always
+    network_mode: "host"
+    extra_hosts:
+      auth.rico93.com: 127.0.0.1
+    environment:
+      sspanel_url: ""
+      key: ""
+      docker: "true"
+      speedtest: 6
+      node_id: 21
+      api_port: 2333
+      downWithPanel: 0
+      LDNS: "1.1.1.1"
+      TZ: "Asia/Shanghai"
+      MYSQLHOST: "v2ssvps.com"
+      MYSQLDBNAME: "2222"
+      MYSQLUSR: "2222"
+      MYSQLPASSWD: "2222"
+      MYSQLPORT: 3306
+      PANELTYPE: 0
+      usemysql: 1
+      CF_Key: "bbbbbbbbbbbbbbbbbb"
+      CF_Email: "getbackcn@gmail.com"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
